@@ -7,7 +7,7 @@
 sudo apt-get update
 
 # 실습에 필요한 필수 라이브러리 설치
-sudo apt-get install -y make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev xz-utils tk-dev lzma liblzma-dev
+sudo apt-get install -y make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev xz-utils tk-dev lzma liblzma-dev jq
 
 # Pyenv 설치
 curl https://pyenv.run | bash   
