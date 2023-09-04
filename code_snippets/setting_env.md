@@ -55,7 +55,7 @@ mlflow = "==2.3.2"
 rich = "*"
 category-encoders = "==2.6.1"
 pydantic = "==1.10.8"
-deepchecks = "==0.17.3"
+deepchecks = "==0.17.4"
 joblib = "==1.2.0"
 
 [dev-packages]
