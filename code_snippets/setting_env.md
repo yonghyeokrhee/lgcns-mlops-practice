@@ -28,22 +28,22 @@ pyenv install 3.9.16
 pyenv versions 
 
 # PDM 설치 
-$ curl -sSL https://pdm-project.org/install-pdm.py | python3 -
+curl -sSL https://pdm-project.org/install-pdm.py | python3 -
 
 # PDM을 이용해서 프로젝트 환경 초기화
-$ pdm init 
+pdm init 
 
 # PDM으로 라이브러리 설치할 때 버전 정보를 미리 알아야 할 때
-$ pip index versions {LIBRARY_NAME}
+pip index versions {LIBRARY_NAME}
 
 # PDM을 이용해서 pandas 2.1.4 버전 이상의 버전을 추가할 때
-$ pdm add “pandas>=2.1.4”
+pdm add “pandas>=2.1.4”
 
 # PDM을 이용해서 black 최신 버전을 설치하고, 개발 환경에서만 사용하도록 할 때
-$ pdm add -dG dev black 
+pdm add -dG dev black 
 
 # PDM 가상환경으로 접근하려면
-$ source .venv/bin/activate
+source .venv/bin/activate
 ```
 
 ## 설치 라이브러리 목록
