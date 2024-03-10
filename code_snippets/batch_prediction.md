@@ -1,16 +1,3 @@
-## 배치 추론 코드 쉘 스크립트
-
-```bash
-# batch_prediction.sh
-BASH_ENV=~/.bashrc
-ROOT_PATH=/workspaces/lgcns-mlops-practice
-PIPENV_PIPFILE=$ROOT_PATH/Pipfile
-
-export PATH=$PATH:/usr/local/py-utils/bin
-export PIPENV_PIPFILE=$PIPENV_PIPFILE
-pipenv run python $ROOT_PATH/batch_prediction.py >> $ROOT_PATH/cron.log 2>&1
-```
-
 ## BentoML 서비스 설정 YAML
 
 ```yaml
