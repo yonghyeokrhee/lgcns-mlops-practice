@@ -27,45 +27,51 @@ pyenv install 3.9.16
 # 설치된 파이썬 버전 확인
 pyenv versions 
 
-# Pipenv 설치 
-pip install pipenv 
+# PDM 설치 
+$ curl -sSL https://pdm-project.org/install-pdm.py | python3 -
 
-# Pipenv 명령어로 Pyenv로 설치한 파이썬 3.9.16 환경 생성
-pipenv --python 3.9.16 
+# PDM을 이용해서 프로젝트 환경 초기화
+$ pdm init 
 
-# Pipenv로 라이브러리 설치할 때 버전 정보를 미리 알아야 할 때
-pip index versions {LIBRARY_NAME}
+# PDM으로 라이브러리 설치할 때 버전 정보를 미리 알아야 할 때
+$ pip index versions {LIBRARY_NAME}
 
-# Pipenv 환경에 pandas 2.0.0 을 설치한다면
-pipenv install pandas==2.0.0 
+# PDM을 이용해서 pandas 2.1.4 버전 이상의 버전을 추가할 때
+$ pdm add “pandas>=2.1.4”
 
-# Pipenv 환경에 black 최신 버전을 설치하고, 개발 환경에서만 사용하도록 할 때
-pipenv install --dev black 
+# PDM을 이용해서 black 최신 버전을 설치하고, 개발 환경에서만 사용하도록 할 때
+$ pdm add -dG dev black 
+
+# PDM 가상환경으로 접근하려면
+$ source .venv/bin/activate
 ```
 
 ## 설치 라이브러리 목록
 
 ```yaml
-[packages]
-bentoml = "==1.0.20"
-scikit-learn = "==1.2.2"
-pandas = "==2.0.0"
-numpy = "==1.24.3"
-mlflow = "==2.3.2"
-rich = "*"
-category-encoders = "==2.6.1"
-pydantic = "==1.10.8"
-deepchecks = "==0.17.4"
-joblib = "==1.2.0"
+dependencies = [
+    "bentoml>=1.2.6",
+    "scikit-learn>=1.3.2",
+    "pandas>=2.1.4",
+    "numpy>=1.26.4",
+    "mlflow>=2.11.1",
+    "category-encoders>=2.6.3",
+    "pydantic>=2.6.3",
+    "deepchecks>=0.18.1",
+    "joblib>=1.3.2",
+    "rich>=13.7.1",
+    "seaborn>=0.13.2",
+]
 
-[dev-packages]
-matplotlib = "*"
-seaborn = "*"
-pre-commit = "*"
-black = "*"
-isort = "*"
-mypy = "*"
-jupyter = "*"
+[project.optional-dependencies]
+dev = [
+    "matplotlib>=3.8.3",
+    "pre-commit>=3.6.2",
+    "black>=24.2.0",
+    "isort>=5.13.2",
+    "mypy>=1.9.0",
+    "jupyter>=1.0.0",
+]
 ```
 
 ## 프리커밋 설정
